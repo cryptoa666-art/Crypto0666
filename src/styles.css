@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #09090b;
+  --color-surface: #111113;
+  --color-surface-2: #18181c;
+  --color-surface-3: #222228;
+  --color-fg: #f3f3ee;
+  --color-muted: #9c9c94;
+  --color-subtle: #6e6e68;
+  --color-border: color-mix(in oklab, #f3f3ee 10%, transparent);
+  --color-border-strong: color-mix(in oklab, #f3f3ee 18%, transparent);
+  --color-primary: #d5dbe3;
+  --color-primary-foreground: #0b0b0d;
+  --color-accent: #c5cdd6;
+  --color-ring: #c5cdd6;
+  --color-gain: #4ea87a;
+  --color-gain-dim: color-mix(in oklab, #4ea87a 16%, transparent);
+  --color-loss: #d16565;
+  --color-loss-dim: color-mix(in oklab, #d16565 16%, transparent);
+  --color-background: #09090b;
+  --color-foreground: #f3f3ee;
+  --color-card: #111113;
+  --color-card-foreground: #f3f3ee;
+  --color-muted-foreground: #9c9c94;
+  --color-popover: #18181c;
+  --color-popover-foreground: #f3f3ee;
+  --color-secondary: #18181c;
+  --color-secondary-foreground: #f3f3ee;
+  --color-destructive: #d16565;
+  --color-input: color-mix(in oklab, #f3f3ee 10%, transparent);
+
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-3xl: 32px;
+  --radius-4xl: 40px;
+
+  --shadow-border: 0 0 0 1px color-mix(in oklab, #f3f3ee 8%, transparent);
+  --shadow-border-hover: 0 0 0 1px color-mix(in oklab, #f3f3ee 14%, transparent);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100svh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 28%, transparent);
+    color: var(--color-fg);
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img.coin-logo {
+    outline: 1px solid color-mix(in oklab, #f3f3ee 10%, transparent);
+    outline-offset: -1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .motion-safe-only {
+    animation: none !important;
+    transition: none !important;
+  }
+}
